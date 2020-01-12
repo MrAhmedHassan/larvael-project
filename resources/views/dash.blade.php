@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
+@include('layouts.side-bar')
+
 @section('content')
 
-    @include('layouts.side-bar')
-    @include('layouts.footer')
+
+
+@include('layouts.footer')
 
 @endsection
 
