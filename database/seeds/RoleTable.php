@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class RoleTable extends Seeder
 {
@@ -28,7 +29,7 @@ class RoleTable extends Seeder
         App\User::create([
             'name'=>'admin',
             'email'=>'admin@admin.com',
-            'password'=>'123456'
+            'password'=>Hash::make('123456')
         ])->assignRole('Admin');
 
     }

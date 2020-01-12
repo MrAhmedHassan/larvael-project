@@ -8,7 +8,7 @@ class Course extends Model
 {
 
     protected $fillable = [
-        'course_name', 'course_image', 'price','started_at'
+        'course_name', 'course_image', 'price','started_at','teacher_id'
     ];
 
 

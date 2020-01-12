@@ -16,7 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/teachers','TeacherController@index')->name('teachers.index');
+
+
 Route::get('/courses','CourseController@index')->name('courses.index');
+Route::get('/courses/create','CourseController@create')->name('courses.create');
+Route::post('/courses/store','CourseController@store')->name('courses.store');
 
 Auth::routes();
 
