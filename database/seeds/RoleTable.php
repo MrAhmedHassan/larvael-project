@@ -17,11 +17,19 @@ class RoleTable extends Seeder
             'Supporter'
         ];
 
+
+
         foreach ($roles as $role){
             $roleTable =new \Spatie\Permission\Models\Role();
             $roleTable->name = $role;
             $roleTable->save();
         }
+
+        App\User::create([
+            'name'=>'admin',
+            'email'=>'admin@admin.com',
+            'password'=>'123456'
+        ])->assignRole('Admin');
 
     }
 }

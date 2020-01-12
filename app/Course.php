@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+
+    protected $fillable = [
+        'course_name', 'course_image', 'price','started_at'
+    ];
+
+
+
     public function teacher()
     {
         return $this->belongsTo('App\User');
