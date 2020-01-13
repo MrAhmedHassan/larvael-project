@@ -27,6 +27,8 @@ Route::get('/supporters','SupporterController@index')->name('supporters.index');
 Route::get('/supporters/create','SupporterController@create')->name('supporters.create');
 Route::post('/supporters/store','SupporterController@store')->name('supporter.store');
 
+Route::get('/students','StudentController@index')->name('students.index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
