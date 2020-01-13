@@ -4,74 +4,67 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Requests\UsersValidation;
+
 
 
 class TeacherController extends Controller
 {
     public function index()
     {
-        $posts = User::all();
-        return view('/Teacher/index')->with('posts',$posts);
-
-        // return view('dashboard');
+        $teachers = User::all();
+        return view('/teachers/index')->with('teachers',$teachers);
     }
 
 
 
     public function create()
     {
-        return view('/Teacher/create') ;
+        return view('/teachers/create') ;
     }
 
-    public function store(Request $request)
+    public function store(UsersValidation $request)
     {
-        $post = new User;
-        $post -> name = $request ->input('name');
-        $post -> email = $request ->input('email');
-        $post -> password = $request ->input('password');
-        $post -> national_id = $request ->input('national_id');
-        $post -> avatar = $request ->input('avatar');
-        $post -> save() ;
+        $teacher = new User;
+        $teacher -> name = $request ->input('name');
+        $teacher -> email = $request ->input('email');
+        $teacher -> password = $request ->input('password');
+        $teacher -> national_id = $request ->input('national_id');
+        $teacher -> avatar = $request ->input('avatar');
+        $teacher -> save() ;
 
-        return redirect('/Teacher');
+        return redirect('/teachers');
     }
 
     public function show($id)
     {
-        $posts = User::find($id);
-        return view('/Teacher/show')->with('posts',$posts);
+        $teacher = User::find($id);
+        return view('/teachers/show')->with('teacher',$teacher);
     }
 
     public  function edit($id)
     {
-        $post = User::find($id); 
-        return view ('Teacher/edit')->with('post',$post);
+        $teacher = User::find($id); 
+        return view ('teachers/edit')->with('teacher',$teacher);
     }
 
-    public function update($id,Request $request)
+    public function update($id,UsersValidation $request)
     {
-        // $posts = Post::find($id);
-        // $posts->update([
-        //     'title'=>request()->title,
-        //     'description'=>request()->description,
-        //     'creator'=>request()->creator
-        // ]);
-        // return redirect (route('Teacher/index'));
-        $post =  User::find($id);
-        $post -> name = $request ->input('name');
-        $post -> email = $request ->input('email');
-        $post -> password = $request ->input('password');
-        $post -> national_id = $request ->input('national_id');
-        $post -> avatar = $request ->input('avatar');
-        $post -> save() ;
+        $teacher =  User::find($id);
+        $teacher -> name = $request ->input('name');
+        $teacher -> email = $request ->input('email');
+        $teacher -> password = $request ->input('password');
+        $teacher -> national_id = $request ->input('national_id');
+        $teacher -> avatar = $request ->input('avatar');
+        $teacher -> save() ;
 
-        return redirect('/Teacher');
+        return redirect('/teachers');
     }
 
     public function destroy($id)
     {
-        $post = User::find($id);
-        $post -> delete();
-        return redirect('/Teacher');
+        $teacher = User::find($id);
+        $teacher -> delete();
+        return redirect('/teachers');
     }
 }

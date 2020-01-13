@@ -5,31 +5,31 @@
 
 <div class='container mt-5'>
 
-<form method='post' action='/Courses'>
+<form method='post' action='/courses'>
 @csrf
   <div class="form-group">
     <label for="exampleFormControlInput1" class='font-weight-bold'>Name</label>
-    <input type="text" name="course_name" class="form-control" id="exampleFormControlInput1" >
+    <input type="text" name="course_name" class="form-control" id="exampleFormControlInput1" requiredrequired>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput2" class='font-weight-bold'>Image</label>
-    <input type="file" name="course_image" class="form-control" id="exampleFormControlInput2" >
+    <input type="file" name="course_image" class="form-control" id="exampleFormControlInput2" required>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput3" class='font-weight-bold'>Price</label>
-    <input type="number" name="price" class="form-control" id="exampleFormControlInput3" >
+    <input type="number" name="price" class="form-control" id="exampleFormControlInput3" required>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput5" class='font-weight-bold'>started_at</label>
-    <input type="date" name="started_at" class="form-control" id="exampleFormControlInput5" >
+    <input type="date" name="started_at" class="form-control" id="exampleFormControlInput5" required>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput5" class='font-weight-bold'>ended_at</label>
-    <input type="week" name="ended_at" class="form-control" id="exampleFormControlInput6" >
+    <input type="week" name="ended_at" class="form-control" id="exampleFormControlInput6" required>
   </div>
 
 

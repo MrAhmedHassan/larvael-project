@@ -26,21 +26,31 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/Teacher', 'TeacherController@index')->name('teacher.index');
-Route::get('/Teacher/create','TeacherController@create');
-Route::post('/Teacher','TeacherController@store');
-Route::get('/Teacher/{post}','TeacherController@show')->name('teacher.show');
-Route::get('/Teacher/{post}/edit','TeacherController@edit')->name('teacher.edit');
-Route::put('/Teacher/{post}','TeacherController@update')->name('teacher.update');
-Route::delete('/Teacher/{post}','TeacherController@destroy');
+Route::get('/teachers', 'TeacherController@index')->name('teachers.index');
+Route::get('/teachers/create','TeacherController@create');
+Route::post('/teachers','TeacherController@store');
+Route::get('/teachers/{teacher}','TeacherController@show')->name('teachers.show');
+Route::get('/teachers/{teacher}/edit','TeacherController@edit')->name('teachers.edit');
+Route::put('/teachers/{teacher}','TeacherController@update')->name('teachers.update');
+Route::delete('/teachers/{teacher}','TeacherController@destroy');
 
 
 
 
-Route::get('/Courses', 'CoursesController@index')->name('courses.index');
-Route::get('/Courses/create','CoursesController@create');
-Route::post('/Courses','CoursesController@store');
-Route::get('/Courses/{post}','CoursesController@show')->name('courses.show');
-Route::get('/Courses/{post}/edit','CoursesController@edit')->name('courses.edit');
-Route::put('/Courses/{post}','CoursesController@update')->name('courses.update');
-Route::delete('/Courses/{post}','CoursesController@destroy');
+Route::get('/courses', 'CoursesController@index')->name('courses.index');
+Route::get('/courses/create','CoursesController@create');
+Route::post('/courses','CoursesController@store');
+Route::get('/courses/{course}','CoursesController@show')->name('courses.show');
+Route::get('/courses/{course}/edit','CoursesController@edit')->name('courses.edit');
+Route::put('/courses/{course}','CoursesController@update')->name('courses.update');
+Route::delete('/courses/{course}','CoursesController@destroy');
+
+
+
+Route::get('/supporters', 'SupporterController@index')->name('supporters.index');
+Route::get('/supporters/create','SupporterController@create');
+Route::post('/supporters','SupporterController@store');
+Route::get('/supporters/{supporter}','SupporterController@show')->name('supporters.show');
+Route::get('/supporters/{supporter}/edit','SupporterController@edit')->name('supporters.edit');
+Route::put('/supporters/{supporter}','SupporterController@update')->name('supporters.update');
+Route::delete('/supporters/{supporter}','SupporterController@destroy');

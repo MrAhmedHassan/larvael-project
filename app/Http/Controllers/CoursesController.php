@@ -4,75 +4,66 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use  App\Http\Requests\CoursesValidation;
 
 
 class CoursesController extends Controller
 {
     public function index()
     {
-        $posts = Course::all();
-        return view('/Courses/index')->with('posts',$posts);
-        
-        // return view('dashboard');
+        $courses = Course::all();
+        return view('/courses/index')->with('courses',$courses);
     }
 
 
 
     public function create()
     {
-        return view('/Courses/create') ;
+        return view('/courses/create') ;
     }
 
-    public function store(Request $request)
+    public function store(CoursesValidation $request)
     {
-        $post = new Course;
-        $post -> course_name = $request ->input('course_name');
-        $post -> course_image = $request ->input('course_image');
-        $post -> price = $request ->input('price');
-        // $post -> created_at = $request ->input('created_at');
-        $post -> started_at = $request ->input('started_at');
-        $post -> ended_at = $request ->input('ended_at');
-        $post -> save() ;
+        $course = new Course;
+        $course -> course_name = $request ->input('course_name');
+        $course -> course_image = $request ->input('course_image');
+        $course -> price = $request ->input('price');
+        $course -> started_at = $request ->input('started_at');
+        $course -> ended_at = $request ->input('ended_at');
+        $course -> save() ;
 
-        return redirect('/Courses');
+        return redirect('/courses');
     }
 
     public function show($id)
     {
-        $posts = Course::find($id);
-        return view('/Courses/show')->with('posts',$posts);
+        $courses = Course::find($id);
+        return view('/courses/show')->with('courses',$courses);
     }
 
     public  function edit($id)
     {
-        $post = Course::find($id); 
-        return view ('Courses/edit')->with('post',$post);
+        $course = Course::find($id); 
+        return view ('courses/edit')->with('course',$course);
     }
 
-    public function update($id,Request $request)
+    public function update($id,CoursesValidation $request)
     {
-        // $posts->update([
-        //     'title'=>request()->title,
-        //     'description'=>request()->description,
-        //     'creator'=>request()->creator
-        // ]);
-        // return redirect (route('Courses/index'));
-        $post = Course::find($id);
-        $post -> course_name = $request ->input('course_name');
-        $post -> course_image = $request ->input('course_image');
-        $post -> price = $request ->input('price');
-        // $post -> created_at = $request ->input('created_at');
-        $post -> started_at = $request ->input('started_at');
-        $post -> ended_at = $request ->input('ended_at');
-        $post -> save() ;
+        $course = Course::find($id);
+        $course -> course_name = $request ->input('course_name');
+        $course -> course_image = $request ->input('course_image');
+        $course -> price = $request ->input('price');
+        $course -> started_at = $request ->input('started_at');
+        $course -> ended_at = $request ->input('ended_at');
+        $course -> save() ;
 
-        return redirect('/Courses');
+        return redirect('/courses');
     }
 
     public function destroy($id)
     {
-        $post = Course::find($id);
-        $post -> delete();
-        return redirect('/Courses');
+        $course = Course::find($id);
+        $course -> delete();
+        return redirect('/courses');
     }
 }

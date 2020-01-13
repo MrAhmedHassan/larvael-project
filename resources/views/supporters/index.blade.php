@@ -4,7 +4,7 @@
 
 
 <div class='d-flex justify-content-center align-items-center m-5'>
-<a href="/Teacher/create"><button type="button" class="btn btn-success py-2">Create Teacher</button></a>
+<a href="/supporters/create"><button type="submit" class="btn btn-success py-2">Create Supporter</button></a>
 </div>
 
 <div class="container-fluid">
@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($posts as $index => $value)  
+  @foreach($supporters as $index => $value)  
     <tr>
       <th scope="row">{{$value['id']}}</th>
       <td>{{$value['name']}}</td>
@@ -31,9 +31,9 @@
 
 
       <td class="d-flex ">
-      <a href="{{route('teacher.show',['post' => $value['id']])}}" class="mx-2"><button type="button" class="btn btn-info">View Details</button></a>
-      <a href="{{route('teacher.edit',['post' => $value['id']])}}" class="mx-2"><button type="button" class="btn btn-warning">Edit</button></a>
-      <form method="post" action="Teacher/{{$value['id']}}">
+      <a href="{{route('supporters.show',['supporter' => $value['id']])}}" class="mx-2"><button type="button" class="btn btn-info">View Details</button></a>
+      <a href="{{route('supporters.edit',['supporter' => $value['id']])}}" class="mx-2"><button type="button" class="btn btn-warning">Edit</button></a>
+      <form method="post" action="supporters/{{$value['id']}}">
       {{method_field('DELETE')}}
       @csrf
       <button type="submit" class="btn btn-danger" onclick='return confirm("Do you Really Want to Delete ?!!")'>Delete</button>

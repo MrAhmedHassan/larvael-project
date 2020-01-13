@@ -4,7 +4,7 @@
 
 
 <div class='d-flex justify-content-center align-items-center m-5'>
-<a href="/Courses/create"><button type="button" class="btn btn-success py-2">Create Course</button></a>
+<a href="/courses/create"><button type="button" class="btn btn-success py-2">Create Course</button></a>
 </div>
 
 <div class="container-fluid">
@@ -24,7 +24,7 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($posts as $index => $value)  
+  @foreach($courses as $index => $value)  
     <tr>
       <th scope="row">{{$value['id']}}</th>
       <td>{{$value['course_name']}}</td>
@@ -38,9 +38,9 @@
 
 
       <td class="d-flex ">
-      <a href="{{route('courses.show',['post' => $value['id']])}}" class="mx-2"><button type="button" class="btn btn-info">View Details</button></a>
-      <a href="{{route('courses.edit',['post' => $value['id']])}}" class="mx-2"><button type="button" class="btn btn-warning">Edit</button></a>
-      <form method="post" action="Courses/{{$value['id']}}">
+      <a href="{{route('courses.show',['course' => $value['id']])}}" class="mx-2"><button type="button" class="btn btn-info">View Details</button></a>
+      <a href="{{route('courses.edit',['course' => $value['id']])}}" class="mx-2"><button type="button" class="btn btn-warning">Edit</button></a>
+      <form method="post" action="courses/{{$value['id']}}">
       {{method_field('DELETE')}}
       @csrf
       <button type="submit" class="btn btn-danger" onclick='return confirm("Do you Really Want to Delete ?!!")'>Delete</button>
