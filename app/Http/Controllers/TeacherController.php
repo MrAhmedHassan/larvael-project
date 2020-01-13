@@ -9,7 +9,8 @@ use Spatie\Permission\Models\Role;
 class TeacherController extends Controller
 {
     public function index(){
-        $role = Role::findById(2);
+//        $role = Role::findById(2);
+//        dd($role->name);
         $teachers = [];
         $users = User::all();
         foreach($users as $user){

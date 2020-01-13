@@ -21,6 +21,11 @@ Route::get('/teachers','TeacherController@index')->name('teachers.index');
 Route::get('/courses','CourseController@index')->name('courses.index');
 Route::get('/courses/create','CourseController@create')->name('courses.create');
 Route::post('/courses/store','CourseController@store')->name('courses.store');
+Route::post('/courses/destroy','CourseController@destroy')->name('courses.destroy');
+
+Route::get('/supporters','SupporterController@index')->name('supporters.index');
+Route::get('/supporters/create','SupporterController@create')->name('supporters.create');
+Route::post('/supporters/store','SupporterController@store')->name('supporter.store');
 
 Auth::routes();
 

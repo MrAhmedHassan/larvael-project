@@ -73,6 +73,7 @@ class RegisterController extends Controller
 
 //      $roleInput = request()->role;
         $roleInput = 'Teacher';
+//        $roleInput = 'Supporter';
         $role =  Role::where('name','=',$roleInput)->first();
         $user->assignRole([$role->id]);
 

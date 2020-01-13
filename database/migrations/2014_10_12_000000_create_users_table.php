@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
 //            $table->foreign('course_id')->references('id')->on('courses');
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 

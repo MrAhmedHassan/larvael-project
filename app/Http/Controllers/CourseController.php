@@ -12,21 +12,18 @@ class CourseController extends Controller
     public function index(){
         $admin = 'Admin';
         $teacher = 'Teacher';
+        $supporter = 'Supporter';
          $user =  auth()->user();
          if($user->hasRole($admin)){
-             dd($user->roles);
+             $courses = Course::all();
+             return $courses;
          }
-             else if($user->hasRole($teacher)){
-                 dd($user->roles);
-             }
-//        dd($authRole);
-
-//        if();
-        $courses = Course::where('teacher_id', auth()->user()->id)->get();
-//        $course->teacher;
-            dd($courses);
-//        $courses = Course::where()->teacher_id = auth()->user()->id;
-
+         else if($user->hasRole($teacher)){
+             $courses = Course::where('teacher_id', auth()->user()->id)->get();
+             return $courses;
+         }else if($user->hasRole($supporter)){
+             dd('hello');
+         }
     }
 
     public function create(){
@@ -34,17 +31,26 @@ class CourseController extends Controller
     }
 
     public function store(){
-//        return "hello";
-
         Course::create([
             'course_name'=>'prog',
             'course_image'=>'image',
             'price'=>10,
             'started_at'=> time(),
-
             'teacher_id'=>auth()->user()->id,
             'ended_at'=> time(),
         ]);
+    }
 
+    public function destroy($course_id){
+        $course = Course::find($course_id);
+        $checkStudentEnrolled = DB::table('students_courses')
+            ->where('course_id',$course_id)
+            ->first();
+        if($checkStudentEnrolled){
+            return view('Courses.index');
+        }else{
+            $course->delete();
+            return view('Courses.index');
+        }
     }
 }
