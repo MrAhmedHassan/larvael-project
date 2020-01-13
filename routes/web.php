@@ -11,7 +11,11 @@
 |
 */
 
+use App\Notifications\SayHello;
+
 Route::get('/', function () {
+    $user=User::find(1);
+    Notification::send($user,new SayHello);
     return view('welcome');
 });
 

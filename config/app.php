@@ -165,6 +165,10 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
 
+        //added by me the jwt
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        
+
         /*
          * Package Service Providers...
          */
@@ -231,6 +235,9 @@ return [
         'Form' => Collective\Html\FormFacade::class,
 
         'Html' => Collective\Html\HtmlFacade::class,
+        //added by me for the jwt
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class, 
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],
 
