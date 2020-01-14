@@ -101,10 +101,13 @@ class StudentController extends Controller
        
     }
 
-    public function show($post)
+    public function show($post,$student)
     {
+      $token = JWTAuth::fromUser($student);
+    
         $student=Student::find($post);
-        return response()->json(compact('student'),201);
+        return response()->json(compact('student','token'),201);
+      
     }
 
  
