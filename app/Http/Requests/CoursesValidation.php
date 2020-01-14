@@ -26,7 +26,7 @@ class CoursesValidation extends FormRequest
         if($this->method()=="PUT")
         {
             $course_name='required';
-            $course_image = 'required';
+            // $course_image = 'required';
             $price = 'required';
             $started_at = 'required';
             $ended_at = 'required';
@@ -34,14 +34,14 @@ class CoursesValidation extends FormRequest
         else
         {
             $course_name='required';
-            $course_image = 'required';
+            // $course_image = 'required';
             $price = 'required';
             $started_at = 'required';
             $ended_at = 'required';
         }
         return [
             'course_name' => $course_name,
-            'course_image' => $course_image,
+            // 'course_image' => $course_image,
             'price' => $price,
             'started_at' => $started_at,
             'ended_at' => $ended_at,

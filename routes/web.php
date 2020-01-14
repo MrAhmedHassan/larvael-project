@@ -54,3 +54,12 @@ Route::get('/supporters/{supporter}','SupporterController@show')->name('supporte
 Route::get('/supporters/{supporter}/edit','SupporterController@edit')->name('supporters.edit');
 Route::put('/supporters/{supporter}','SupporterController@update')->name('supporters.update');
 Route::delete('/supporters/{supporter}','SupporterController@destroy');
+
+
+Route::get('/students', 'StudentController@index')->name('students.index');
+// Route::get('/students/create','StudentController@create');
+// Route::post('/students','StudentController@store');
+Route::get('/students/{student}','StudentController@show')->name('students.show');
+// Route::get('/students/{student}/edit','StudentController@edit')->name('students.edit');
+// Route::put('/students/{student}','StudentController@update')->name('students.update');
+// Route::delete('/students/{student}','StudentController@destroy');

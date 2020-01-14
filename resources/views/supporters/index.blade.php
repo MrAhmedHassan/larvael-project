@@ -15,7 +15,7 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">National_id</th>
-      <th scope="col">avatar</th>
+      <th scope="col">Image</th>
       <th scope="col"><span style="margin-left: 100px">CRUD</span></th>
     </tr>
   </thead>
