@@ -1,11 +1,12 @@
 <?php
 
 namespace App;
-
+use BeyondCode\Comments\Traits\HasComments;
 use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
+    use HasComments;
     public function teacher()
     {
         return $this->belongsTo('App\User');

@@ -2,11 +2,15 @@
 namespace App\Http\Controllers;
 use App\Student;
 use App\User;
+use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+
+use BeyondCode\Comments\Comment;
+
 
 class StudentController extends Controller
 {
@@ -109,6 +113,26 @@ class StudentController extends Controller
         return response()->json(compact('student','token'),201);
       
     }
+
+    //comments functions
+    public function createcomment(){
+
+    //dd($post);
+      //dd(request()->comment);
+     //$post = Course::find(1);
+     //dd($post);
+    $comment = Comment::create([
+        'comment' => request()->comment,
+        'user_id' => request()->user_id
+      ]);
+
+    
+  }
+  public function indexcomment(){
+      $comments = Comment::all();
+      return response()->json(compact('comments'),201);
+     // return view('/comments/index')->with('comments',$comments);
+  }
 
  
    
