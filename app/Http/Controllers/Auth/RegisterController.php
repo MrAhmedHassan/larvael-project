@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -65,19 +66,32 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-      $user =  User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
 
-//      $roleInput = request()->role;
-        $roleInput = 'Teacher';
-//        $roleInput = 'Supporter';
+        if($data['avatar']){
+            // Get Filename With The Extension
+            $fileNameWithExt = request()->avatar->getClientOriginalName();
+            // Get Just Filename
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            //Get Just Ext
+            $extension = request()->avatar->getClientOriginalExtension();
+            // Filename To Store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            // Uploade Image
+            $path = request()->avatar->storeAs('public/cover_image',$fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
+      $user =  User::create([
+          'name' => $data['name'],
+          'email' => $data['email'],
+          'password' => Hash::make($data['password']),
+          'avatar' => $fileNameToStore,
+          'national_id' => $data['national_id'],
+      ]);
+        $roleInput = request()->character;
         $role =  Role::where('name','=',$roleInput)->first();
         $user->assignRole([$role->id]);
-
         return $user;
-
     }
 }

@@ -9,8 +9,6 @@ use Spatie\Permission\Models\Role;
 class TeacherController extends Controller
 {
     public function index(){
-//        $role = Role::findById(2);
-//        dd($role->name);
         $teachers = [];
         $users = User::all();
         foreach($users as $user){
@@ -18,8 +16,11 @@ class TeacherController extends Controller
                 $teachers [] = $user;
             }
         }
-//        return view('Teacher.index',$teachers);
-        return response()->json($teachers);
+        return view('/teachers/index')->with('teachers',$teachers);
+    }
 
+    public function create()
+    {
+        return view('/teachers/create') ;
     }
 }

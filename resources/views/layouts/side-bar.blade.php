@@ -19,7 +19,7 @@
                      with font-awesome or any other icon font library -->
 {{--                                    @role('Admin')--}}
                 <li class="nav-item has-treeview menu-open">
-                    <a href="{{route('teachers.index')}}" class="nav-link active">
+                    <a href="{{route('teachers.index')}}"  class="nav-link active">
                         {{--                            <i class="nav-icon fas fa-tachometer-alt"></i>--}}
                         <p>
                             Teacher
