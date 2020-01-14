@@ -37,16 +37,15 @@ class TeacherController extends Controller
         if(request()->avatar) {
             $image =Storage::putfile('imagess',$request->file('avatar'));
             $request->avatar->move(public_path('imagess'),$image);
+            $teacher -> avatar = $image;
         }
         $teacher = new User;
         $teacher -> name = $request ->input('name');
         $teacher -> email = $request ->input('email');
         $teacher -> password = $request ->input('password');
         $teacher -> national_id = $request ->input('national_id');
-        $teacher -> avatar = $image;
         $teacher -> save() ;
         $teacher->assignRole('Teacher');
-
         return redirect('/teachers');
     }
 
@@ -69,12 +68,12 @@ class TeacherController extends Controller
         if(request()->avatar) {
             $image =Storage::putfile('imagess',$request->file('avatar'));
             $request->avatar->move(public_path('imagess'),$image);
+            $teacher -> avatar = $image;
         }
         $teacher -> name = $request ->input('name');
         $teacher -> email = $request ->input('email');
         $teacher -> password = $request ->input('password');
         $teacher -> national_id = $request ->input('national_id');
-        $teacher -> avatar = $image;
         $teacher -> save();
         return redirect('/teachers');
     }

@@ -47,13 +47,13 @@ Route::delete('/teachers/{teacher}','TeacherController@destroy');
 
 
 //yehia
-Route::get('/courses', 'CoursesController@index')->name('courses.index');
-Route::get('/courses/create','CoursesController@create');
-Route::post('/courses','CoursesController@store');
-Route::get('/courses/{course}','CoursesController@show')->name('courses.show');
-Route::get('/courses/{course}/edit','CoursesController@edit')->name('courses.edit');
-Route::put('/courses/{course}','CoursesController@update')->name('courses.update');
-Route::delete('/courses/{course}','CoursesController@destroy');
+Route::get('/courses', 'CourseController@index')->name('courses.index');
+Route::get('/courses/create','CourseController@create');
+Route::post('/courses','CourseController@store');
+Route::get('/courses/{course}','CourseController@show')->name('courses.show');
+Route::get('/courses/{course}/edit','CourseController@edit')->name('courses.edit');
+Route::put('/courses/{course}','CourseController@update')->name('courses.update');
+Route::delete('/courses/{course}','CourseController@destroy');
 
 //ahmed
 //Route::get('/supporters','SupporterController@index')->name('supporters.index');

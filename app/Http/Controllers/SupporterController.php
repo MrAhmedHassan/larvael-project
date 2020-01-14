@@ -9,7 +9,13 @@ use Spatie\Permission\Models\Role;
 
 class SupporterController extends Controller
 {
-        public function index(){
+    public function index()
+    {
+        $supporters = User::all();
+        return view('/Supporters/index')->with('supporters',$supporters);
+    }
+
+    public function index(){
             $supporters = [];
             $users = User::all();
             $user =  auth()->user();
