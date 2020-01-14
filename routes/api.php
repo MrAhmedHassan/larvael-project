@@ -28,7 +28,9 @@ Route::post('/posts/{post}', 'StudentController@update')->name('posts.update');
 
 Route::get('/students/{post}','StudentController@show')->name('posts.show');
 });
+//comments of student
+ Route::get('/comments', 'CoursesController@indexcomment')->name('comments.index');
+Route::get('/comments/create', 'CoursesController@createcomment')->name('comments.create');
 
-    /////////////////////////////////////////
 
 
