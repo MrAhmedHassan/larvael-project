@@ -29,7 +29,7 @@
 
   <div class="form-group">
     <label for="exampleFormControlInput5" class='font-weight-bold'>Avatar</label>
-    <input type="text" name="avatar" class="form-control" id="exampleFormControlInput5" required>
+    <input type="text" name="avatar" class="form-control" id="exampleFormControlInput5" >
   </div>
 
   <label class='font-weight-bold'>Choose Supporter's Course</label>

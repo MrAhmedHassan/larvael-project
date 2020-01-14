@@ -15,8 +15,8 @@
     <p class="card-text">{{$supporter->email}}</p>
     <h5 class="card-title">National_id : </h5>
     <p class="card-text">{{$supporter->national_id}}</p>
-    <h5 class="card-title">Avatar_img : </h5>
-    <p class="card-text">{{$supporter->avatar}}</p>
+    <h5 class="card-title">Image : </h5>
+    <div style="width: 7%;height: 7%"><img class="img-fluid rounded-circle"  src="/storage/cover_image/{{$supporter->avatar}}" alt="img_user"></div>
   </div>
 </div>
 

@@ -26,7 +26,7 @@
       <td>{{$value['name']}}</td>
       <td>{{$value['email']}}</td>
       <td>{{$value['national_id']}}</td>
-      <td>{{$value['avatar']}}</td>
+      <td style="width: 7%;height: 7%"><img class="img-fluid rounded-circle"  src="/storage/cover_image/{{$value->avatar}}" alt="img_user"></td>
 
 
 

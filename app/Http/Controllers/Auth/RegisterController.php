@@ -53,7 +53,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            // 'national_id' => ['required', 'string', 'unique:users'],
+            // 'avatar' => ['image','nullable','max:1999'],
+            // 'national_id' => ['required', 'integer', 'max:300'],
         ]);
     }
 
@@ -65,10 +66,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        if($data['avatar']){
+            // Get Filename With The Extension
+            $fileNameWithExt = request()->avatar->getClientOriginalName();
+            // Get Just Filename
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            //Get Just Ext
+            $extension = request()->avatar->getClientOriginalExtension();
+            // Filename To Store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            // Uploade Image
+            $path = request()->avatar->storeAs('public/cover_image',$fileNameToStore);
+        }else{
+            $fileNameToStore = 'noimage.jpg';
+        }
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'avatar' => $fileNameToStore,
+            'national_id' => $data['national_id'],
         ]);
     }
 }

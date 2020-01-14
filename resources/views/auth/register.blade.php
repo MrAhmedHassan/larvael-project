@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" enctype='multipart/form-data' action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -58,6 +58,35 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">{{ __('National ID') }}</label>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" name="national_id" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">{{ __('Choose File') }}</label>
+                            <div class="col-md-6">
+                                <input type="file" class="form-control-file" name="avatar"><br>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">{{ __('Choose Character') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" name="character">
+                                    <label class="form-check-label">Teacher</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" name="character">
+                                    <label class="form-check-label">Supporter</label>
+                                </div>
                             </div>
                         </div>
 

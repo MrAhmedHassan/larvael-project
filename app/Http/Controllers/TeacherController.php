@@ -51,12 +51,30 @@ class TeacherController extends Controller
     public function update($id,UsersValidation $request)
     {
         $teacher =  User::find($id);
+        if($request ->input('avatar')){
+
+            
+                // // Get Filename With The Extension
+                // $fileNameWithExt = request()->avatar->getClientOriginalName();
+                // // Get Just Filename
+                // $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                // //Get Just Ext
+                // $extension = request()->avatar->getClientOriginalExtension();
+                // // Filename To Store
+                // $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                // // Uploade Image
+                // $path = request()->avatar->storeAs('public/cover_image',$fileNameToStore);
+                // $teacher -> avatar = $fileNameToStore;
+
+            
+
+        $teacher -> avatar = $request ->input('avatar');
+        }
         $teacher -> name = $request ->input('name');
         $teacher -> email = $request ->input('email');
         $teacher -> password = $request ->input('password');
         $teacher -> national_id = $request ->input('national_id');
-        $teacher -> avatar = $request ->input('avatar');
-        $teacher -> save() ;
+        $teacher -> save();
 
         return redirect('/teachers');
     }

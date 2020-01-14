@@ -26,10 +26,9 @@ class UsersValidation extends FormRequest
         if($this->method()=="PUT")
         {
             $name='required';
-            $email = 'required|unique:users';
+            $email = 'required';
             $password = 'required';
-            $national_id = 'required|unique:users';
-            $avatar = 'required';
+            $national_id = 'required';
         }
         else
         {
@@ -37,14 +36,12 @@ class UsersValidation extends FormRequest
             $email = 'required|unique:users';
             $password = 'required';
             $national_id = 'required|unique:users';
-            $avatar = 'required';
         }
         return [
             'name' => $name,
             'email' => $email,
             'password' => $password,
             'national_id' => $national_id,
-            'avatar' => $avatar,
         ];
     }
 }
