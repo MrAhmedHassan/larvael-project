@@ -63,7 +63,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
-        //added dy me to the jwt
+        //added by me to the jwt
         'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
     ];
 
