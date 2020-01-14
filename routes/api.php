@@ -23,10 +23,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/register', 'StudentController@register');
 Route::post('login', 'StudentController@login');
+Route::group(['middleware' => ['jwt.verify']], function() {
+Route::post('/posts/{post}', 'StudentController@update')->name('posts.update');
 
-Route::post('/posts/{post}', 'StudentController@update')->name('posts.update')->middleware('auth:api');
-
-Route::get('/students/{post}','StudentController@show');
+Route::get('/students/{post}','StudentController@show')->name('posts.show');
+});
 
     /////////////////////////////////////////
 
