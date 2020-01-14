@@ -10,9 +10,11 @@ use Spatie\Permission\Models\Role;
 class CourseController extends Controller
 {
     public function index(){
+
         $admin = 'Admin';
         $teacher = 'Teacher';
         $supporter = 'Supporter';
+
          $user =  auth()->user();
          if($user->hasRole($admin)){
              $courses = Course::all();
@@ -22,6 +24,7 @@ class CourseController extends Controller
              $courses = Course::where('teacher_id', auth()->user()->id)->get();
              return $courses;
          }else if($user->hasRole($supporter)){
+
              dd('hello');
          }
     }

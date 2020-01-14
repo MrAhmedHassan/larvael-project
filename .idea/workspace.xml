@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0b70eb3d-36c1-41c7-b0d8-4fe8be21c32f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/side-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/side-bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +163,9 @@
       <updated>1578816942983</updated>
       <workItem from="1578816957135" duration="2299000" />
       <workItem from="1578823423139" duration="3810000" />
-      <workItem from="1578902597692" duration="29960000" />
+      <workItem from="1578902597692" duration="33923000" />
+      <workItem from="1578953834388" duration="33000" />
+      <workItem from="1578992753882" duration="2103000" />
     </task>
     <servers />
   </component>
@@ -175,9 +177,9 @@
       <screen x="58" y="28" width="1308" height="740" />
     </state>
     <state x="445" y="156" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/58.28.1308.740@58.28.1308.740" timestamp="1578934531003" />
-    <state x="367" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1578902642181">
+    <state x="367" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1578992752881">
       <screen x="58" y="28" width="1308" height="740" />
     </state>
-    <state x="367" y="225" key="com.intellij.ide.util.TipDialog/58.28.1308.740@58.28.1308.740" timestamp="1578902642181" />
+    <state x="367" y="225" key="com.intellij.ide.util.TipDialog/58.28.1308.740@58.28.1308.740" timestamp="1578992752881" />
   </component>
 </project>
