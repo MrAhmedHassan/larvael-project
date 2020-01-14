@@ -14,7 +14,7 @@
 
   <div class="form-group">
     <label for="exampleFormControlInput2" class='font-weight-bold'>Image</label>
-    <input type="file" name="course_image" class="form-control" id="exampleFormControlInput2" required>
+    <input type="file" name="course_image" class="form-control" id="exampleFormControlInput2" >
   </div>
 
   <div class="form-group">

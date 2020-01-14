@@ -3,8 +3,8 @@
 @section('content')
 
 
-<div class='d-flex justify-content-center align-items-center m-2'>
-  <h1>Students Comments</h1>
+<div class='d-flex justify-content-center align-items-center m-5'>
+<a href="{{route('comments.create')}}"><button type="button" class="btn btn-success py-2">Create Default Comment</button></a>
 </div>
 
 <div class="container-fluid">
@@ -31,12 +31,14 @@
 
 
       <td class="d-flex ">
-      <a href="#" class="mx-2"><button type="button" class="btn btn-info">Approve</button></a>
-      <a href="#" class="mx-2"><button type="button" class="btn btn-warning">Reject</button></a>
-      <form method="post" action="courses/{{$value['id']}}">
+      <a href="comments/approve/{{$value['id']}}" class="mx-2"><button type="button" class="btn btn-info">Approve</button></a>
+    
+      <form method="post" action="/comments/{{$value['id']}}">
       {{method_field('DELETE')}}
       @csrf
+      <button type="submit" class="btn btn-danger" onclick='return confirm("Do you Really Want to Delete ?!!")'>Delete</button>
       </form>
+
       </td>
     </tr>
     @endforeach

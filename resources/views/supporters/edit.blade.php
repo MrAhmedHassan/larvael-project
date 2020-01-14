@@ -30,7 +30,7 @@
 
   <div class="form-group">
     <label for="exampleFormControlInput5" class='font-weight-bold'>Avatar</label>
-    <input type="text" name="avatar" class="form-control" value="{{$supporter->avatar}}" id="exampleFormControlInput5" required>
+    <input type="text" name="avatar" class="form-control" value="{{$supporter->avatar}}" id="exampleFormControlInput5" >
   </div>
 
 

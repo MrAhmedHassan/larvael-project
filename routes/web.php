@@ -33,10 +33,13 @@ Route::get('/teachers/{teacher}','TeacherController@show')->name('teachers.show'
 Route::get('/teachers/{teacher}/edit','TeacherController@edit')->name('teachers.edit');
 Route::put('/teachers/{teacher}','TeacherController@update')->name('teachers.update');
 Route::delete('/teachers/{teacher}','TeacherController@destroy');
+
+Route::get('/comments', 'CoursesController@indexcomment')->name('comments.index');
+Route::get('/comments/create', 'CoursesController@createcomment')->name('comments.create');
+Route::get('/comments/approve/{id}', 'CoursesController@approvecomment')->name('comments.approve');
+Route::delete('/comments/{id}', 'CoursesController@destroycomment')->name('comments.destroy');
+
 Route::get('/courses', 'CoursesController@index')->name('courses.index');
-
-Route::get('/comments', 'CoursesController@showcomment');
-
 Route::get('/courses/create','CoursesController@create');
 Route::post('/courses','CoursesController@store');
 Route::get('/courses/{course}','CoursesController@show')->name('courses.show');
