@@ -12,17 +12,6 @@ use Spatie\Permission\Models\Role;
 class StudentController extends Controller
 {
     public function index(){
-//        dd(auth()->user()->id);
-
-//        $courses = Course::where('teacher_id', auth()->user()->id)->get();
-//        dd($courses);
-//        foreach ($courses as $course){
-////            dd($course->students);
-////            $course_id =   $course->id;
-////            DB::table('students_courses')
-////                ->where('course_id',$course_id);
-//        }
-
 
         $user = auth()->user();
         if($user->hasRole('Admin')){
@@ -35,6 +24,7 @@ class StudentController extends Controller
                 $courseName = $course->course_name;
                 $coursesWithStudents [] = [$courseName => $course->students];
             }
+            dd($coursesWithStudents);
             return $coursesWithStudents;
         }
     }

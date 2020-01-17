@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0b70eb3d-36c1-41c7-b0d8-4fe8be21c32f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupporterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupporterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CoursesValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CoursesValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Courses/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Courses/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Supporters/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Supporters/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/side-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/side-bar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +168,7 @@
       <workItem from="1578823423139" duration="3810000" />
       <workItem from="1578902597692" duration="33923000" />
       <workItem from="1578953834388" duration="33000" />
-      <workItem from="1578992753882" duration="11810000" />
+      <workItem from="1578992753882" duration="19004000" />
     </task>
     <servers />
   </component>
@@ -175,10 +176,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="445" y="156" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579001983002">
+    <state x="445" y="156" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579006799065">
       <screen x="58" y="28" width="1308" height="740" />
     </state>
-    <state x="445" y="156" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/58.28.1308.740@58.28.1308.740" timestamp="1579001983002" />
+    <state x="445" y="156" width="524" height="480" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/58.28.1308.740@58.28.1308.740" timestamp="1579006799065" />
     <state x="367" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1578992752881">
       <screen x="58" y="28" width="1308" height="740" />
     </state>

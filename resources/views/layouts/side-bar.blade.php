@@ -17,7 +17,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-{{--                                    @role('Admin')--}}
+                @role('Admin')
                 <li class="nav-item has-treeview menu-open">
                     <a href="{{route('teachers.index')}}"  class="nav-link active">
                         {{--                            <i class="nav-icon fas fa-tachometer-alt"></i>--}}
@@ -28,9 +28,9 @@
                     </a>
 
                 </li>
-{{--                @endrole--}}
+                @endrole
 
-{{--                @role('Admin|Teacher')--}}
+                @role('Admin|Teacher')
                 <li class="nav-item has-treeview menu-open">
                     <a href="{{route('courses.index')}}" class="nav-link active">
 {{--                                                    <i class="nav-icon fas fa-tachometer-alt"></i>--}}
@@ -40,11 +40,11 @@
                         </p>
                     </a>
                 </li>
-{{--                @endrole--}}
+                @endrole
 
-{{--                @role('Admin|Teacher')--}}
+                @role('Admin|Teacher')
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="/supporters" class="nav-link active">
                         {{--                            <i class="nav-icon fas fa-tachometer-alt"></i>--}}
                         <p>
                             Supporter
@@ -52,11 +52,11 @@
                         </p>
                     </a>
                 </li>
-{{--                @endrole--}}
+                @endrole
 
-{{--                @role('Admin|Teacher')--}}
+                @role('Admin|Teacher')
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="{{route('students.index')}}" class="nav-link active">
                         {{--                            <i class="nav-icon fas fa-tachometer-alt"></i>--}}
                         <p>
                             students
@@ -65,11 +65,11 @@
                     </a>
 
                 </li>
-{{--                @endrole--}}
+                @endrole
 
-{{--                @role('Teacher')--}}
+                @role('Admin|Teacher')
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="{{route('statistic.index')}}" class="nav-link active">
                         {{--                            <i class="nav-icon fas fa-tachometer-alt"></i>--}}
                         <p>
                             Statistics
@@ -78,22 +78,21 @@
                     </a>
 
                 </li>
-{{--                @endrole--}}
+                @endrole
 
-{{--                @role('Supporter')--}}
+                @role('Admin|Supporter|Teacher')
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="{{route('comments.index')}}" class="nav-link active">
                         {{--                            <i class="nav-icon fas fa-tachometer-alt"></i>--}}
                         <p>
                             Comments
                             {{--                                <i class="right fas fa-angle-left"></i>--}}
                         </p>
                     </a>
-
                 </li>
-{{--                @endrole--}}
+                @endrole
 
-{{--                @role('Supporter')--}}
+                @role('Supporter|Teacher|Admin')
                 <li class="nav-item has-treeview menu-open">
                     <a href="#" class="nav-link active">
                         {{--                            <i class="nav-icon fas fa-tachometer-alt"></i>--}}
@@ -103,7 +102,7 @@
                         </p>
                     </a>
                 </li>
-{{--                @endrole--}}
+                @endrole
 
             </ul>
         </nav>

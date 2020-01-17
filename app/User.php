@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function C_Teacher()
     {
-        return $this->hasMany('App\Course');
+        return $this->hasMany('App\Course' , 'teacher_id');
     }
 
     public function C_Supporter()
